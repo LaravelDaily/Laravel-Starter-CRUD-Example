@@ -8,6 +8,17 @@
                             <!-- Dashboard -->
                             <x-layouts.sidebar-link href="{{ route('dashboard') }}" icon='fas-house'
                                 :active="request()->routeIs('dashboard*')">Dashboard</x-layouts.sidebar-link>
+
+                            <x-layouts.sidebar-two-level-link-parent :active="request()->routeIs('task-categories*')" title="Task Categories"
+                                icon='fas-folder'>
+                                <x-layouts.sidebar-two-level-link href="{{ route('task-categories.index') }}"
+                                    icon='fas-list' :active="request()->routeIs('task-categories.index')">Task Categories
+                                    List</x-layouts.sidebar-link>
+                                    <x-layouts.sidebar-two-level-link href="{{ route('task-categories.create') }}"
+                                        icon='fas-plus' :active="request()->routeIs('task-categories.create')">Create New Task
+                                        Category</x-layouts.sidebar-link>
+                            </x-layouts.sidebar-two-level-link-parent>
+
                             {{-- 
                             <!-- Components - Level 1 -->
                             <li x-data="{ open: false }">
