@@ -19,6 +19,13 @@
                                         Category</x-layouts.sidebar-link>
                             </x-layouts.sidebar-two-level-link-parent>
 
+                            <x-layouts.sidebar-two-level-link-parent :active="request()->routeIs('tasks*')" title="Tasks" icon='fas-list'>
+                                <x-layouts.sidebar-two-level-link href="{{ route('tasks.index') }}" icon='fas-list'
+                                    :active="request()->routeIs('tasks.index')">Tasks List</x-layouts.sidebar-link>
+                                    <x-layouts.sidebar-two-level-link href="{{ route('tasks.create') }}" icon='fas-plus'
+                                        :active="request()->routeIs('tasks.create')">Create New Task</x-layouts.sidebar-link>
+                            </x-layouts.sidebar-two-level-link-parent>
+
                             {{-- 
                             <!-- Components - Level 1 -->
                             <li x-data="{ open: false }">
